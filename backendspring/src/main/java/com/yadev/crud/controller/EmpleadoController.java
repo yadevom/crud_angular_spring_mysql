@@ -1,15 +1,17 @@
 package com.yadev.crud.controller;
 
+import com.yadev.crud.exceptions.ResourceNotFoundException;
 import com.yadev.crud.model.Empleado;
 import com.yadev.crud.repository.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/")
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
 public class EmpleadoController {
 
     @Autowired
@@ -24,4 +26,26 @@ public class EmpleadoController {
     public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
         return empleadoRepository.save(empleado);
     }
+    @GetMapping("/empleados/{id}")
+    public ResponseEntity<Empleado> obtenerEmpleadopPorId(@PathVariable Long id) {
+        Empleado empleado = empleadoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(("No existe el empleado con ID: " + id)));
+
+        return ResponseEntity.ok(empleado);
+    }
+
+    @PutMapping("/empleados/{id}")
+    public ResponseEntity<Empleado> ActualizarEmpleado(@PathVariable Long id, @RequestBody Empleado detallesEmpleado) {
+        Empleado empleado = empleadoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(("No existe el empleado con ID: " + id)));
+
+        empleado.setNombre(detallesEmpleado.getNombre());
+        empleado.setApellido(detallesEmpleado.getApellido());
+        empleado.setEmail(detallesEmpleado.getEmail());
+
+        Empleado empleadoActualizado = empleadoRepository.save(empleado);
+
+        return ResponseEntity.ok(empleadoActualizado);
+    }
+
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Empleado } from 'src/app/core/models/empleado';
+import { EmpleadoService } from '../../services/empleado.service';
 
 @Component({
   selector: 'app-registrar-empleado',
@@ -10,13 +12,27 @@ export class RegistrarEmpleadoComponent implements OnInit {
 
   empleado: Empleado = new Empleado();
 
-  constructor() { }
+  constructor(
+    private empleadoServicio:EmpleadoService,
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
-    console.log(this.empleado);
+  }
+  
+  guardarEmpleado() {
+    this.empleadoServicio.registrarEmpleado(this.empleado).subscribe(dato => {
+      this.irListaEmpleados();
+    },
+      error => console.log(error)
+    );
+  }
+
+  irListaEmpleados() {
+    this.router.navigate(['/empleados']);
   }
 
   onSubmit() {
-    console.log(this.empleado);
+    this.guardarEmpleado();
   }
 }

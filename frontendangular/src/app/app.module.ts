@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ListaEmpleadosComponent } from '../app/modules/empleados/components/lista-empleados/lista-empleados.component';
 import { RegistrarEmpleadoComponent } from './modules/empleados/components/registrar-empleado/registrar-empleado.component';
 import { FormsModule } from '@angular/forms';
+import { ActualizarEmpleadoComponent } from './modules/empleados/components/actualizar-empleado/actualizar-empleado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaEmpleadosComponent,
     RegistrarEmpleadoComponent,
+    ActualizarEmpleadoComponent,
   ],
   imports: [
     BrowserModule,
