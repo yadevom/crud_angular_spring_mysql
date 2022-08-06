@@ -8,6 +8,7 @@ import { ListaEmpleadosComponent } from '../app/modules/empleados/components/lis
 import { RegistrarEmpleadoComponent } from './modules/empleados/components/registrar-empleado/registrar-empleado.component';
 import { FormsModule } from '@angular/forms';
 import { ActualizarEmpleadoComponent } from './modules/empleados/components/actualizar-empleado/actualizar-empleado.component';
+import { EmpleadoDetallesComponent } from './modules/empleados/components/empleado-detalles/empleado-detalles.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ActualizarEmpleadoComponent } from './modules/empleados/components/actu
     ListaEmpleadosComponent,
     RegistrarEmpleadoComponent,
     ActualizarEmpleadoComponent,
+    EmpleadoDetallesComponent,
   ],
   imports: [
     BrowserModule,

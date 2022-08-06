@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Empleado } from 'src/app/core/models/empleado';
+import swal from 'sweetalert2';
 import { EmpleadoService } from '../../services/empleado.service';
 
 @Component({
@@ -26,6 +27,7 @@ export class RegistrarEmpleadoComponent implements OnInit {
     },
       error => console.log(error)
     );
+    swal('Registro Exitoso', 'Empleado ha sido creado con exito');
   }
 
   irListaEmpleados() {

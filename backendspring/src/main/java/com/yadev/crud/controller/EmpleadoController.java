@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/")
-// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmpleadoController {
 
     @Autowired
@@ -26,6 +28,7 @@ public class EmpleadoController {
     public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
         return empleadoRepository.save(empleado);
     }
+
     @GetMapping("/empleados/{id}")
     public ResponseEntity<Empleado> obtenerEmpleadopPorId(@PathVariable Long id) {
         Empleado empleado = empleadoRepository.findById(id)
@@ -46,6 +49,21 @@ public class EmpleadoController {
         Empleado empleadoActualizado = empleadoRepository.save(empleado);
 
         return ResponseEntity.ok(empleadoActualizado);
+    }
+
+    @DeleteMapping("/empleados/{id}")
+    public ResponseEntity<Map<String, Boolean>> eliminarEmpleado(@PathVariable Long id) {
+        Empleado empleado = empleadoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(("No existe el empleado con ID: " + id)));
+
+        empleadoRepository.delete(empleado);
+
+        Map<String, Boolean> respuesta = new HashMap<>();
+
+        respuesta.put("eliminar", Boolean.TRUE);
+
+        return ResponseEntity.ok(respuesta);
+
     }
 
 }
