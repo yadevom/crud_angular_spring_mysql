@@ -8,7 +8,8 @@ de cada uno y mostrar todos los registros de los empleados.
 
 Arquitectura de la aplicación a realizar:
 
-![Image text](https://github.com/yadevom/apirest_biblioteca_bidirecional/blob/main/relacion_bd.png)
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/arquitectura.png)
+
 Mediante un componente de Angular, que solicita un servicio HttpClient accede a la URL del Controller de Spring Boot para solicitar y retornar la rta.
 
 ## Consideraciones del Backend
@@ -96,7 +97,7 @@ Indicar el ID actualizar y escribir cuerpo dato a modificar
 ## Consideraciones Frontend
 Arquitectura frontend Angular a realizar:
 
-![Image text](https://github.com/yadevom/apirest_biblioteca_bidirecional/blob/main/relacion_bd.png)
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/arquitectura_front.png)
 
 Tendremos servicio con HttpClient y Router.
 - Router configuramos las rutas y cada componente estara vinculado con la ruta.
@@ -133,25 +134,49 @@ Se realiza cambios adicionales de restrincciones que causan molestia
 ## Demostración aplicación en funcionamiento
 
 Pagina principal, si tiene empleados registrados aparecera un lista con las opciones de editar, eliminar y detalles, en la parte superior las opciones de ver este listado o registrar empleado:
-![Image text](https://github.com/yadevom/apirest_biblioteca_bidirecional/blob/main/relacion_bd.png)
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app0.png)
 
 Seleccion `Editar` mostrar  los datos que se puede modificar del empleado:
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app1.png)
+
 Se deben cumplirse con las restrincciones que tiene el formulario para que se habilite el boton `Guardar`:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app2.png)
 
 Se genera una alerta de confirmacion de la edicion:
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app3.png)
+
 Selecion `Eliminar` aparecera una alerta para notificarnos si estamos seguro de realizar la accion:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app4.png)
 
 Si la confirmamos nos aparecera otra alerta informando el proceso con exito:
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app5.png)
+
 Seleccion `Detalles` arrojara una alerta informando el ingreso:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app6.png)
 
 Posterior nos dara a conocer los datos de empleado:
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app7.png)
+
 Seleccion `Registrar Empleado` nos mostrara un formularo con los campos:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app8.png)
 
 Se debe cumplir con las restrincciones para habilitar el boton `Registrar` y almacenar el nuevo registro en BD:
 
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app9.png)
 
+Si los datos estan correctos se habilitara el `Registrar`:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app10.png)
+
+Notificación que el registro del empleado fue exitoso:
+
+![Image text](https://github.com/yadevom/crud_angular_spring_mysql/blob/main/img_explicativas/app11.png)
