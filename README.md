@@ -82,7 +82,7 @@ Registrar empleado - POST ```http://localhost:8080/api/v1/empleados```
     "nombre": "James"
 }
 ```
-Actualizar biblioteca - PUT ```http://localhost:8080/api/v1/empleados/8```
+Actualizar empleado - PUT ```http://localhost:8080/api/v1/empleados/8```
 
 Indicar el ID actualizar y escribir cuerpo dato a modificar
 ```
