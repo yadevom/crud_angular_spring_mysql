@@ -23,6 +23,25 @@ export class ListaEmpleadosComponent implements OnInit {
     this.obtenerEmpleados();
   }
 
+  /*
+  Uso validar con empleados creados (quemados)
+  constructor() {}
+
+  ngOnInit(): void {
+    this.empleados = [
+      {
+        "id": 1,
+        "nombre": "Jose",
+        "id":1,
+        "id":1,
+      },
+      {
+
+      },
+    ];
+  }
+  */
+
   private obtenerEmpleados() {
     this.empleadoServicio.obtenerListaDeEmpleados().subscribe((dato) => {
       this.empleados = dato;
